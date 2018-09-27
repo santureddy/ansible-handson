@@ -1,0 +1,16 @@
+---
+- name: Ensure Apache is  installed
+  yum: name=httpd state=present
+  when: ansible_os_family == "RedHat"
+
+- name: Start Apache server
+  service: name=httpd state=started
+
+- name: create if it doesn't exist
+  file:
+    path: "{{ doc_root }}"
+    state: directory
+
+- name: Copy Site Files
+  template: src=templates/index.j2 dest={{ doc_root }}/index.html owner=root group=root mode=0644
+

@@ -1,0 +1,6 @@
+---
+
+- hosts: ciservers
+  sudo: yes
+  roles:
+  - ciserver

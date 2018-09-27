@@ -1,0 +1,11 @@
+jenkins ansible_ssh_host=192.168.33.60  
+[ciservers]
+jenkins
+
+[datacenter:children]
+ciservers
+
+[datacenter:vars]
+ansible_ssh_user=vagrant
+ansible_ssh_pass=vagrant
+

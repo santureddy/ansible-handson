@@ -1,0 +1,6 @@
+---
+- hosts: webservers:dbservers
+  sudo: yes
+
+- include: webserver.yml
+- include: dbserver.yml

@@ -1,0 +1,8 @@
+---
+- name: Ensure MySQL is installed
+  yum: name=mysql-server state=present
+  when: ansible_os_family == "Debian"
+
+- name: Start MySQL
+  service: name=mysqld state=started
+
